@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+/* Layout for main area */
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* Header nav styling */
+.headerBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+}
+
+/* AcademiQ&A styling */
+.appLogo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+/* Search box */
+.searchBox {
+    flex: 1;
+    margin: 0 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* User icon */
+.userImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Main Section */
+.mainSec {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 70px); /* Positioned below header nav */
+    overflow: hidden; 
+}
+
+/* Sidebar */
+.sideNav {
+    flex: 0.2;
+    background-color: #00254d;
+    color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: 70px; 
+    height: calc(100vh - 70px); /* Positioned below header nav */
+    overflow-y: auto; 
+}
+
+/* Side navigation layout */
+.sideNav nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Links for navigating */
+.sideNav nav ul li {
+    margin: 15px 0;
+}
+
+.sideNav nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.sideNav nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Area */
+.mainArea {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto; 
+}
+
+/* Featured joined boards styling */
+.boardContainer {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Scroll horizontally to check other boards */
+    padding: 10px 0;
+    margin-bottom: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.boardBox {
+    flex: 0 0 250px;
+    text-align: center;
+    scroll-snap-align: center;
+}
+
+.boardBox img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.boardBox h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #004080;
+}
+
+/* Query posts from joined boards styling */
+.postContainer {
+    padding: 20px;
+}
+
+.postTile {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.userHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.userImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.postDetails {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.postButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Voting and answering buttons */
+.upvoteBtn, .downvoteBtn, .answerBtn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.upvoteBtn:hover {
+    color: red;
+}
+
+.downvoteBtn:hover {
+    color: #555;
+}
+
+.answerBtn:hover {
+    color: #004080;
+}
+
+/* Smaller screen responsive design */
+@media (max-width: 768px) {
+    .mainSec {
+        flex-direction: column;
+    }
+
+    .sideNav {
+        flex: 0.3;
+    }
+
+    .mainArea {
+        flex: 1;
+    }
+
+    .boardContainer {
+        gap: 10px;
+    }
+
+    .boardBox {
+        flex: 0 0 200px;
+    }
+}

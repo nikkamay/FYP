@@ -1,0 +1,96 @@
+body { 
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+ /* Image and form layout with full height of screen  */
+.loginContainer {
+  display: flex;
+  height: 100vh; 
+}
+
+ /* Image 70% width */
+.loginImg {
+  flex: 7; 
+  background-image: url("../images/login.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+ /* Login form 30% width */
+.loginForm {
+  flex: 3; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #004080; 
+}
+
+form {
+  width: 100%;
+  max-width: 300px;
+}
+
+ /* Space for input field*/
+.inputContainer {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #b0c4de; 
+}
+  /*Changes color when hovered */
+button:hover:not(:disabled) {
+  background-color: #002a5c; 
+}
+
+ /* Styling for the messages*/
+.msg {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: red; 
+}
+
+.signingUp {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.signingUp a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ /* When hovered, underline appears*/
+.signingUp a:hover {
+  text-decoration: underline;
+}
