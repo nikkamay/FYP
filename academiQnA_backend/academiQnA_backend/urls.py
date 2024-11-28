@@ -17,12 +17,14 @@ Including another URLconf
 from django.contrib import admin
 # URL routing imports
 from django.urls import path, include 
+from django.http import JsonResponse  # Import for default root view
 
+# Default response for root path
+def root_view(request):
+    return JsonResponse({"message": "Welcome to the AcademiQ&A backend!"})
 
 urlpatterns = [
-    # Route to aaccess django admin interface
-    path('admin/', admin.site.urls),
-    # Loads URLS from core app to main website
-    path('', include('core.urls')),  # Linking core urls.py
-    
+    path('admin/', admin.site.urls),  # Admin route
+    path('api/', include('core.urls')),  # Include core app URLs under /api/
+    path('', root_view),  # Root path for the entire project
 ]

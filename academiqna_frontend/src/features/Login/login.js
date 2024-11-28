@@ -38,12 +38,15 @@ function Login() {
         });
   
         // Backend response checking
-        if (response.data.statMsg === "Login successful!") {
+        if (response.status === 200 && response.data.statMsg === "Login successful!") {
+          // Input fields clearing
+          updateUsername("");
+          updatePassword("");
           // When login is successful, it navigates user to homepage
           navigating("/home");
         } else {
           // Error message displayed when login is unsuccessful 
-          updStatMsg(response.data.statMsg || "Invalid username or password");
+          updStatMsg("Invalid username or password");
         }
         // Handling more errors
       } catch (error) {

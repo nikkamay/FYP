@@ -19,6 +19,7 @@ const test = [
 function Home() {
     const [boards, updBoards] = useState([]); // Storing board topic
 
+
     useEffect(() => {
         // Fills in the boards from test_db
         updBoards(test);
@@ -51,7 +52,9 @@ function Home() {
                     <nav>
                         <ul>
                             <li><a href="/home">Home</a></li>
-                            <li><a href="/boards">Discussions</a></li>
+                            <li><a href="/boards">Joined Boards</a></li>
+                            <li><a href="/boards">Discussion Boards</a></li>
+
 
 
                         </ul>
