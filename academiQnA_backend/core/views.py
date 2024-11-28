@@ -4,6 +4,10 @@ from rest_framework.response import Response
 from django.contrib.auth import authenticate
 from rest_framework import status
 from django.http import JsonResponse
+from rest_framework.generics import ListAPIView
+from .models import DiscussionBoard, Post
+from .serializers import DiscussionBoardSerializer, PostSerializer
+
 
 
 
@@ -24,3 +28,18 @@ class LoginView(APIView):
         else:
             # When invalid, returns an error message of 400 HTTP status
             return Response({"statMsg": "Invalid username or password"}, status=status.HTTP_400_BAD_REQUEST)
+
+# API endpoint for listing discussion boards
+class DiscussionBoardView(ListAPIView):
+    # Retrieves all discussion boards
+    queryset = DiscussionBoard.objects.all()
+    # Serialize for JSON conversion
+    serializer_class = DiscussionBoardSerializer
+
+# API endpoint for listing dposts
+class PostView(ListAPIView):
+    # Retrieves all posts
+    queryset = Post.objects.all()
+    # Serialize for JSON conversion
+    serializer_class = PostSerializer
+

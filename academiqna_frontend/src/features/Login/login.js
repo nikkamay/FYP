@@ -71,7 +71,7 @@ function Login() {
         <div className="loginImg"></div>
         {/* Form for entering login credentials */}
         <div className="loginForm">
-          <h1>AcademiQ&A?</h1>
+          <h1>AcademiQ&A</h1>
           <form onSubmit={loginUser}>
             <div className="inputContainer">
               <input

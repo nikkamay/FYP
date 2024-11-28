@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -115,7 +116,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'core.CustomUser'
+AUTH_USER_MODEL = 'core.User'
+
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
