@@ -14,8 +14,13 @@ class DiscussionBoardSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     # Username field from User model is used to include in posts
     username = serializers.CharField(source='user.username', read_only=True)
+    # Adding board title
+    board_title = serializers.CharField(source='board.title', read_only=True)  
+    
     # Defines model and its fields
     class Meta:
         model = Post
         # Fields defined to include in responses
-        fields = ['id', 'board', 'user', 'username', 'content', 'date_posted']
+        fields = ['id', 'board','board_title' ,'user', 'username', 'content', 'date_posted']
+
+

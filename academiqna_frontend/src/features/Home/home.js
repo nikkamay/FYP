@@ -84,7 +84,7 @@ function Home() {
                         {posts.length > 0 ? (
                             posts.map((post) => (
                                 <div key={post.id} className="postTile">
-                                    <h3>{post.board.title}</h3>
+                                    <h3>{post.board_title}</h3>
                                     <div className="userHeader">
                                         <img src={userImg} alt="User" className="userImg" />
                                         <p>{post.username}</p>
