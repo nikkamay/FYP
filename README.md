@@ -1,2 +1,2 @@
 # FYP
-Final Year Project
+Final Year Project: AcademiQ&A
