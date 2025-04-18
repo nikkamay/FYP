@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     # A boolean field to differentiate between lecturers and students to manage role based access control
     is_lecturer = models.BooleanField(default=False) # False if user is a student, True if lecturer
-
+    userImg = models.ImageField(upload_to='user_images/', null=True, blank=True)
 
     def __str__(self):
         return self.username # Returns username when the object is printed
@@ -62,9 +62,15 @@ class Post(models.Model):
     # Tracks users who liked this post, allowing multiple users to like it
     likes = models.ManyToManyField(User, related_name='liked_posts', blank=True) 
 
+    downvotes = models.ManyToManyField(User, related_name='downvoted_posts', blank=True)
+    content_moderation = models.BooleanField(default=False) 
+
     # Returns the total number of post likes
     def like_count(self):
         return self.likes.count() 
+    
+    def downvote_count(self):  
+        return self.downvotes.count()
 
     # String representation of Post model
     def __str__(self):
@@ -98,9 +104,16 @@ class Comment(models.Model):
     # Users who liked the comment, accessible through 'liked_comments' on User
     likes = models.ManyToManyField(User, related_name='liked_comments', blank=True)
 
+    downvotes = models.ManyToManyField(User, related_name='downvoted_comments', blank=True)
+
+    content_moderation = models.BooleanField(default=False)
+
     # Returns the total number of likes on the comment
     def like_count(self):
         return self.likes.count()  
+    
+    def downvote_count(self):  
+        return self.downvotes.count()
     
     # String representation of comment model 
     def __str__(self):

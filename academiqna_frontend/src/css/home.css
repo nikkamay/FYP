@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
-    overflow: hidden; 
+    
 }
 
 /* Layout for main area */
@@ -19,16 +19,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 30px;
     background-color: #004080;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     height: 70px;
-}
+    color: white;
+    gap: 20px;
+  }
 
-/* AcademiQ&A styling */
+  .middleContainer {
+    flex: 1;
+    display: flex;
+    justify-content:center;
+  }
+
+
 .appLogo {
     font-size: 1.8rem;
     font-weight: bold;
@@ -36,14 +40,70 @@ body {
     color: #fff;
 }
 
-/* Search box */
+.searchContainer {
+    width: 100%;
+    max-width: 85%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 999px;
+    padding: 0 12px;
+    height: 38px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  }
+  
+  .searchBtn i {
+    font-size: 18px;
+    color: #004080;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+
+
+.searchContainer:focus-within {
+    box-shadow: 0 2px 12px rgba(0, 64, 128, 0.25);
+}
+
 .searchBox {
     flex: 1;
-    margin: 0 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
     border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 8px 10px;
+    background-color: transparent;
+    color: #000;
 }
+
+.searchBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .searchBtn:hover i {
+    transform: scale(1.2);
+    color: #00254d;
+  }
+
+  .searchBtn:hover {
+    background: none !important;
+  }
+
+
+
+
+
 
 /* User icon */
 .userImg {
@@ -57,7 +117,7 @@ body {
 .mainSec {
     display: flex;
     flex: 1;
-    height: calc(100vh - 70px); /* Positioned below header nav */
+    height: calc(100vh - 70px); 
     overflow: hidden; 
 }
 
@@ -69,7 +129,7 @@ body {
     padding: 20px;
     position: sticky;
     top: 70px; 
-    height: calc(100vh - 70px); /* Positioned below header nav */
+    height: calc(100vh - 70px);
     overflow-y: auto; 
 }
 
@@ -86,53 +146,82 @@ body {
 }
 
 .sideNav nav ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
     color: #fff;
     text-decoration: none;
-    font-size: 1.1rem;
+    transition: font-size 0.2s ease, color 0.2s ease;
 }
+
+.sideNav ul li a i {
+    font-size: 30px;        
+    margin-right: 10px;     
+    min-width: 24px;    
+   
+  }
 
 .sideNav nav ul li a:hover {
-    text-decoration: underline;
+    font-size: 1.25rem;
+    color: #00bfff;
+    text-decoration: none !important;   
 }
 
-/* Main Content Area */
 .mainArea {
-    flex: 1;
-    padding: 20px;
-    height: 100%;
-    overflow-y: auto; 
+  flex: 1;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
 }
 
-/* Featured joined boards styling */
-.boardContainer {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto; /* Scroll horizontally to check other boards */
-    padding: 10px 0;
-    margin-bottom: 20px;
-    scroll-snap-type: x mandatory;
-    
+.scrollWrapperHome {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
 }
 
-.boardBox {
-    flex: 0 0 250px;
-    text-align: center;
-    scroll-snap-align: center;
+.mainArea > .scrollWrapper {
+  margin-bottom: 20px;
 }
 
-.boardBox img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+.boardContainerHome {
+  display: flex ;
+  flex-direction: row ;
+  flex-wrap: nowrap ;
+  gap: 15px;
+  padding: 10px;
 }
 
-.boardBox h3 {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #004080;
+.boardBoxHome {
+  flex: 0 0 auto;         
+  width: 250px;          
+  min-width: 250px;
+  scroll-snap-align: start;
+}
+.boardBoxHome img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+.boardBoxHome img {
+  width: 100%;
+  height: 140px; 
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
-/* Query posts from joined boards styling */
+.boardBoxHome h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #004080;
+}
+
+
+
 .postContainer {
     padding: 20px;
 }
@@ -159,7 +248,7 @@ body {
 }
 
 .postDetails {
-    color: #555;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -168,7 +257,7 @@ body {
     justify-content: space-around;
 }
 
-/* Voting and answering buttons */
+
 .upvoteBtn, .downvoteBtn, .answerBtn {
     background: none;
     border: none;
@@ -210,3 +299,310 @@ body {
         flex: 0 0 200px;
     }
 }
+
+
+
+.commentSection {
+    margin-left: 60px;
+    width: auto;
+    max-width: 85% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+
+.commentInput {
+    width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    resize: none;
+}
+
+
+.commentSubmit {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    font-size: 0.9rem;
+}
+
+.commentSubmit:hover {
+    background-color: #00254d;
+}
+
+/* Comment User Info */
+.commentUser {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.commentUserImg {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.commentUserName {
+    font-weight: bold;
+}
+
+
+.commentTile {
+    margin-top: 10px;
+    margin-left: 30px; 
+    padding: 10px 0;
+    width: calc(100% - 30px);
+    border-bottom: 1px solid #e0e0e0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.commentTile.reply {
+    margin-left: 60px; 
+    width: auto;
+    max-width: calc(100% - 80px);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+
+.viewRepliesBtn {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: #007BFF;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 0;
+}
+
+.viewRepliesBtn:hover {
+    text-decoration: underline;
+}
+
+
+.viewCommentsBtn {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: #007BFF;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 0;
+}
+
+.viewCommentsBtn:hover {
+    text-decoration: underline;
+}
+
+.commentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .commentHeaderLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .commentHeaderLeft img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .commentHeaderRight {
+    position: relative;
+  }
+
+
+
+.postButtons button i {
+    color: #004080; 
+    font-size: 20px; 
+    transition: color 0.2s, transform 0.2s;
+  }
+  
+  
+  .postButtons button:hover i {
+    color: #00254d; 
+    transform: scale(1.2); 
+  }
+
+  .upvoteBtn:hover i {
+    color: red; 
+  }
+  
+  .downvoteBtn:hover i {
+    color: #ff4d4d important!; 
+  }
+  
+  .answerBtn:hover i {
+    color: #007BFF; 
+  }
+  
+  .upvoteBtn.liked i {
+    color: red; 
+  }
+  
+  .downvoteBtn.disliked i {
+    color:  red; 
+  }
+  
+
+  .upvoteBtn, .downvoteBtn, .answerBtn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .upvoteBtn i, .downvoteBtn i, .answerBtn i {
+    transition: color 0.3s ease;
+  }
+
+  
+  .upvoteBtn {
+    color: #004080; 
+    font-weight: bold; 
+}
+
+  .dropdownToggle i {
+    color: #004080; 
+    font-size: 20px;
+    transition: color 0.2s, transform 0.2s;
+  }
+  
+  .dropdownToggle:hover i {
+    color: #00254d;
+    transform: scale(1.2); 
+  }
+
+
+  .postActionsDropdown, .commentActionsDropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdownToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .dropdownContent {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+  
+  .postActionsDropdown:hover .dropdownContent,
+  .commentActionsDropdown:hover .dropdownContent {
+    display: block;
+  }
+  
+
+.fallbackIcon {
+  font-size: 40px;        
+  width: 40px;           
+  height: 40px;           
+  display: flex;
+  object-fit: cover;    
+  align-items: center;
+  justify-content: center;              
+  margin-right: 10px;      
+}
+
+
+.postUser .fallbackIcon {
+    color: #004080; 
+  }
+
+.commentHeaderLeft .fallbackIcon {
+    color: #004080; 
+  }
+
+  .sortContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+
+  .sortButtonHome {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 12px 20px;  
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    
+  }
+  
+
+  .sortContainer:hover .sortDropdown {
+    display: block;
+  }
+
+  .sortDropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .sortDropdown div {
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #004080;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+  
+  .sortDropdown div:hover {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  .jBoards {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004080;
+    text-align: center;
+  }

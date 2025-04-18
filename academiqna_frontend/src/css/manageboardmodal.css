@@ -1,0 +1,125 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    display: flex;        
+    flex-direction: column; 
+    align-items: center;    
+  }
+
+  .modalContent form {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .manageBoardBtn {
+    background-color: rgba(0, 64, 128, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .manageBoardBtn:hover {
+    background-color: rgba(0, 64, 128, 1);
+  }
+  
+  .memberRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 80%;            
+    margin-left: auto;     
+    margin-right: auto;
+    gap: 15px;
+  }
+  
+  .memberRow span {
+    flex-grow: 1;       
+    text-align: left;   
+    min-width: 150px;  
+  }
+  .removeMemberBtn {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .removeMemberBtn:hover {
+    background-color: #d62828;
+  }
+
+  .modalContent input,
+.modalContent textarea {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.modalContent textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.modalContent button[type="submit"] {
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.modalContent button[type="submit"]:hover {
+  background-color: #003366;
+}
+
+.editBoardLabel {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .swal-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 4px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+  }

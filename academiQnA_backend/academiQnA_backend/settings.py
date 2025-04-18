@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'core',
     'corsheaders',
 ]
@@ -142,3 +143,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GROQ_API_KEY = "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"
+GROQ_API_BASE = "https://api.groq.com/openai/v1"
+
+

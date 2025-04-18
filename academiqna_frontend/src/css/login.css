@@ -4,13 +4,13 @@ body {
   font-family: Arial, sans-serif;
 }
 
- /* Image and form layout with full height of screen  */
+
 .loginContainer {
   display: flex;
   height: 100vh; 
 }
 
- /* Image 70% width */
+
 .loginImg {
   flex: 7; 
   background-image: url("../images/login.jpg");
@@ -18,7 +18,7 @@ body {
   background-position: center;
 }
 
- /* Login form 30% width */
+
 .loginForm {
   flex: 3; 
   display: flex;
@@ -67,12 +67,12 @@ button {
 button:disabled {
   background-color: #b0c4de; 
 }
-  /*Changes color when hovered */
+
 button:hover:not(:disabled) {
   background-color: #002a5c; 
 }
 
- /* Styling for the messages*/
+
 .msg {
   margin-top: 10px;
   font-size: 0.9rem;
@@ -90,7 +90,7 @@ button:hover:not(:disabled) {
   font-weight: bold;
 }
 
- /* When hovered, underline appears*/
+
 .signingUp a:hover {
   text-decoration: underline;
 }

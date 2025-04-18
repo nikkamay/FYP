@@ -1,0 +1,219 @@
+.moderationContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .moderationHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #003366;
+    color: white;
+  }
+  
+  .moderationLogo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .moderationSearchBox {
+    width: 300px;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  .moderationMainSec {
+    display: flex;
+    flex: 1;
+  }
+  
+  .moderationSideNav {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    height: calc(100vh - 70px);
+  }
+  
+  .moderationSideNav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .moderationSideNav li {
+    margin-bottom: 15px;
+  }
+  
+  .moderationSideNav a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+  }
+  
+  .moderationMainArea {
+    flex: 1;
+    padding: 20px;
+    background-color: #fafafa;
+  }
+  
+  .moderationTitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .moderationPostsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .moderationPostTile {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .moderationPostHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .moderationPostUser {
+    display: flex;
+    align-items: center;
+  }
+  
+  .moderationPostUserImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .moderationPostUserName {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .moderationTimestamp {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .moderationPostContent {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .moderationButtons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .moderationButton {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .moderationButton.approve {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .moderationButton.reject {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .moderationButton:hover {
+    opacity: 0.9;
+  }
+  
+  .moderationCommentTile {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid #003366;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+
+
+  .searchContainer {
+    width: 100%;
+    max-width: 85%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 999px;
+    padding: 0 12px;
+    height: 38px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .searchBox {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 8px 10px;
+    background-color: transparent;
+    color: #000;
+  }
+  
+  .searchBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+  }
+  
+  .searchBtn i {
+    font-size: 18px;
+    color: #004080;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .searchBtn:hover i {
+    transform: scale(1.2);
+    color: #00254d;
+  }
+  
+  .sideNav nav ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: font-size 0.2s ease, color 0.2s ease;
+  }
+  
+  .sideNav nav ul li a i {
+    font-size: 30px;
+    margin-right: 10px;
+    min-width: 24px;
+  }
+  
+  .sideNav nav ul li a:hover {
+    font-size: 1.25rem;
+    color: #00bfff;
+    text-decoration: none !important;
+  }
+  
+  
