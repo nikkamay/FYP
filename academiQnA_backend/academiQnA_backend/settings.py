@@ -144,7 +144,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = ""
 GROQ_API_BASE = "https://api.groq.com/openai/v1"
 
 
